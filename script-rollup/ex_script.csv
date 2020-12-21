@@ -1,0 +1,8 @@
+Emitter Name,Emitter ECR Name,Mode Key,Emitter Mode,Frequency (Mhz),PRI (usec),PW (usec),Scan Type (Scan Time),Start Run,+30s,+60s,+90s,+120s,+150s,+180s,+210s,+240s,+270s,+300s
+A,AA,1,ABC – 01,,,,,On,On,,,,,,,,,
+A,AA,1,ABC – 02,,,,,,,On,On,Off,,,On,On,On,Off
+A,AA,2,CBA,,,,,,On,On,On,Off,,,,On,On,Off
+A,AA,3,XYZ,,,,,,,On,On,Off,,,,,On,Off
+B,BB,1,ABC – 01,,,,,On,,,,Off,,,On,,On,Off
+B,BB,1,ABC – 02,,,,,,On,,On,,,,,On,,
+B,BB,1,ABC – 03,,,,,,,On,,,,,,,,
