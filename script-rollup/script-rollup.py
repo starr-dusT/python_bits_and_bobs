@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
 
+# Settings
+secs_per_cell = 30
+
 # Clean up the script for furthur analysis
 def clean_script(df, drop_cols):
     # Drop columns we don't need
@@ -18,12 +21,13 @@ def clean_script(df, drop_cols):
     # Return cleaned dataframe
     return df_int
 
-def add_emit_time(df):
-    times = []
-    for i in range(len(df)):
-        df_cnt = df.iloc[i].count()
-        #times = times.append(df_cnt["On"])
-    return df_cnt 
+
+def det_emit_times(row):
+    return list(row).count("On")*secs_per_cell
+
+def count_engagements(row):
+    return list(row).count("Off")
+
 
 
 
@@ -33,4 +37,4 @@ def add_emit_time(df):
 df = pd.read_csv("ex_script.csv") 
 drop_cols = ['Emitter Mode', 'Frequency (Mhz)', 'PRI (usec)', 'PW (usec)','Scan Type (Scan Time)']
 clean_df = clean_script(df, drop_cols)
-tst = add_emit_time(clean_df)
+tst = df.apply(det_emit_times, axis=1)
